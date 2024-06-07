@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajj Pilgrim Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #2c662d;
+            margin-bottom: 20px;
+        }
+        .info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .info h2 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #2c662d;
+        }
+        .info div {
+            margin: 10px 0;
+        }
+        .contact-icons {
+            margin-top: 20px;
+        }
+        .contact-icons a {
+            color: #2c662d;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        .translate-button {
+            background: #2c662d;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+			margin: 16px;
+        }
+        .translate-button:hover {
+            background: #245224;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+        .flag {
+            width: 32px;
+            height: auto;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        @media (max-width: 600px) {
+            .info div {
+                font-size: 14px;
+            }
+            .contact-icons a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function translatePage() {
+            document.querySelectorAll('.translatable').forEach(function(element) {
+                if (element.dataset.lang === 'en') {
+                    element.dataset.lang = 'ar';
+                    element.innerHTML = element.dataset.ar;
+                } else {
+                    element.dataset.lang = 'en';
+                    element.innerHTML = element.dataset.en;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hajj Pilgrim Information <img src="https://img.icons8.com/color/48/000000/india.png" alt="India" class="flag"></h1>
+        <div class="info">
+            <h2 class="translatable" data-en="Name" data-ar="اسم" data-lang="en">Vasim</h2>
+            <div>John Doe</div>
+            <h2 class="translatable" data-en="Cover Number" data-ar="رقم الغلاف" data-lang="en">Cover Number</h2>
+            <div>123456</div>
+            <div><strong class="translatable" data-en="Flight Details" data-ar="تفاصيل الرحلة" data-lang="en">Flight Details</strong>: Flight XY123, 10:00 AM, 20th June 2024</div>
+            <div><strong class="translatable" data-en="Passport Details" data-ar="تفاصيل جواز السفر" data-lang="en">Passport Details</strong>: P12345678</div>
+            <div><strong class="translatable" data-en="Country" data-ar="بلد" data-lang="en">Country</strong>: India</div>
+            <div><strong class="translatable" data-en="Contact Information" data-ar="معلومات الاتصال" data-lang="en">Contact Information</strong>: +91-9876543210</div>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+919876543210"><img class="icon" src="https://img.icons8.com/material-outlined/24/2c662d/phone.png" alt="Call"></a>
+            <a href="mailto:example@example.com"><img class="icon" src="https://img.icons8.com/material-outlined/24/2c662d/email.png" alt="Email"></a>
+            <a href="https://wa.me/919876543210"><img class="icon" src="https://img.icons8.com/material-outlined/24/2c662d/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+        <button class="translate-button" onclick="translatePage()">Translate to Arabic</button>
+    </div>
+</body>
+</html>
